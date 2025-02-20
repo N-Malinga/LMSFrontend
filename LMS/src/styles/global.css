@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=IBM+Plex+Sans:wght@300;400;500;700&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+:root {
+    /* Color Theme */
+    --primary-color: #2759cd;       /* Primary brand color */
+    --secondary-color: #133d9f;     /* Secondary brand color */
+    --background-color: #ffffff;    /* Background color */
+    --text-color: #333;             /* Default text color */
+    --text-light: #fff;             /* Light text color */
+    --error-color: #e74c3c;         /* Error messages */
+    --success-color: #2ecc71;       /* Success messages */
+  
+    /* Fonts */
+    --font-primary: 'Outfit', sans-serif;       /* Primary font */
+    --font-secondary: 'Open Sans', sans-serif; /* Secondary font */
+    --font-size-base: 16px;                    /* Base font size */
+    --font-size-small: 14px;                   /* Small font size */
+    --font-size-large: 20px;                   /* Large font size */
+  }
+  
+  /* Apply the font to the body */
+  body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    color: var(--primary-color);
+  }
+  
+  /* Links */
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: var(--secondary-color);
+  }
+  
+  /* Buttons */
+  button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    font-size: var(--font-size-base);
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: var(--secondary-color);
+  }
