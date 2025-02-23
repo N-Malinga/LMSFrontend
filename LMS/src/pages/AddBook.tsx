@@ -12,9 +12,32 @@ function Addbook() {
     const [author, setAuthor] = useState('');
     const [description, setDescription] = useState('');
 
+    const [errors, setErrors] = useState<{title?: string, author?: string, description?: string}> ({});
+
+    const validateForm = () => {
+        const newErrors: {title?: string, author?: string, description?: string} = {};
+
+        if (!title){
+            newErrors.title = 'Title is required';
+        }
+        if(!author){
+            newErrors.author = 'Author is required';
+        }
+        if(!description){
+            newErrors.description = 'Description is required';
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    }
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
+        if (!validateForm()) {
+            return; // Stop if there are validation errors
+          }
+          
         const newBook = {
             title,
             author,
@@ -114,8 +137,10 @@ function Addbook() {
                                             placeholder="Enter book title"
                                             value={title}
                                             onChange={(e) => setTitle(e.target.value)}
-                                            required
                                         />
+                                        {errors.title && (
+                                            <p className="text-red-500 text-sm mt-1">{errors.title}</p>
+                                        )}
                                     </div>
 
                                     <div className="mb-6">
@@ -129,8 +154,10 @@ function Addbook() {
                                             placeholder="Enter book author"
                                             value={author}
                                             onChange={(e) => setAuthor(e.target.value)}
-                                            required
                                         />
+                                        {errors.author && (
+                                            <p className="text-red-500 text-sm mt-1">{errors.author}</p>
+                                        )}
                                     </div>
 
                                     <div className="mb-6">
@@ -144,8 +171,10 @@ function Addbook() {
                                             placeholder="Enter book description"
                                             value={description}
                                             onChange={(e) => setDescription(e.target.value)}
-                                            required
                                         ></textarea>
+                                        {errors.description && (
+                                            <p className="text-red-500 text-sm mt-1">{errors.description}</p>
+                                        )}
                                     </div>
 
                                     <div className="flex justify-end space-x-4">

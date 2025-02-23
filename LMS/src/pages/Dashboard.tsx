@@ -26,7 +26,7 @@ function Dashboard() {
           <div className="mb-4 rounded-lg bg-gray-50">
             <h2 className='text-xl font-bold font-semibol pt-4 pl-7'>Recently Added Books</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-              {books.slice(0,4).map((book) => (
+              {books.slice(-4).reverse().map((book) => (
                 <BookCard key={book.id} book={book} />
               ))}
             </div>
