@@ -9,7 +9,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
   return (
     <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300">
       <img
-        src={book.coverImage}
+        src={book.imgLink}
         alt={`Cover of ${book.title}`}
         className="w-full h-48 object-cover"
       />
