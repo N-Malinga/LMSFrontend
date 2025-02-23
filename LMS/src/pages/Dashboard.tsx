@@ -2,8 +2,14 @@ import React from 'react'
 import cover_Image from '../assets/cover_image.jpg'
 import { sampleBooks } from '../constants/data'
 import BookCard from '../components/books/BookCard'
+import useBooks from '../hooks/useBooks'
 
 function Dashboard() {
+  const { books, loading, error} = useBooks();
+
+  if(loading) return <div><p>Loading...</p></div>;
+  if(error) return <div><p>Error: {error}</p></div>;
+
   return (
     <div>
 
@@ -20,7 +26,7 @@ function Dashboard() {
           <div className="mb-4 rounded-lg bg-gray-50">
             <h2 className='text-xl font-bold font-semibol pt-4 pl-7'>Recently Added Books</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-              {sampleBooks.slice(0,4).map((book) => (
+              {books.slice(0,4).map((book) => (
                 <BookCard key={book.id} book={book} />
               ))}
             </div>
