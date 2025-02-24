@@ -7,6 +7,7 @@ import './styles/global.css';
 import BooksManagement from './pages/BooksManagement';
 import AddBook from './pages/AddBook';
 import EditBook from './pages/EditBook';
+import ViewBook from './pages/ViewBook';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/books" element={<BooksManagement />} />
           <Route path="/add-book" element={<AddBook />} />
           <Route path="/edit-book/:id" element={<EditBook />} />
+          <Route path="/view-book/:id" element={<ViewBook />} />
         </Routes>
       </MainLayout>
     </Router>

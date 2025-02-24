@@ -108,6 +108,7 @@ const useBooks = () => {
         catch{
             setError("Failed to fetch book count");
             console.error(error);
+            
         }
         finally{
             setLoading(false);

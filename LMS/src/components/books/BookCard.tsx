@@ -70,18 +70,22 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
     });
   };
 
+  const handleView = () => {
+    navigate(`/view-book/${book.id}`);
+  };
 
   return (
     <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300">
-      <img
-        src={book.imgLink}
-        alt={`Cover of ${book.title}`}
-        className="w-full h-48 object-cover"
-      />
-
+      <div onClick={handleView} className="cursor-pointer">
+        <img
+          src={book.imgLink}
+          alt={`Cover of ${book.title}`}
+          className="w-full h-48 object-cover"
+        />
+      </div>
 
       <div className="p-4">
-        <h3 className="text-xl font-bold mb-2 text-gray-800">{book.title}</h3>
+        <h3 className="text-xl font-bold mb-2 text-gray-800" onClick={handleView}>{book.title}</h3>
         <p className="text-sm text-gray-600 mb-2">
           <strong>Author:</strong> {book.author}
         </p>
