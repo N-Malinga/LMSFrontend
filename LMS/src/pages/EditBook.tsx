@@ -16,6 +16,7 @@ function EditBook() {
     const [description, setDescription] = useState('');
     const [imgLink, setImgLink] = useState('');
 
+    // fetch book details when render the component
     useEffect(() => {
         const fetchBook = async () => {
             if (id) {
@@ -24,7 +25,7 @@ function EditBook() {
                     setTitle(book.title);
                     setAuthor(book.author);
                     setDescription(book.description);
-                    setImgLink(book.imgLink || ''); // Set imgLink if available
+                    setImgLink(book.imgLink || '');
                 }
             }
         };
@@ -34,6 +35,7 @@ function EditBook() {
 
     const [errors, setErrors] = useState<{ title?: string, author?: string, description?: string }>({});
 
+    // Form validation function
     const validateForm = () => {
         const newErrors: { title?: string, author?: string, description?: string } = {};
 
@@ -55,7 +57,7 @@ function EditBook() {
         e.preventDefault();
 
         if (!validateForm()) {
-            return; // Stop if there are validation errors
+            return;
         }
 
         const updatedBook = {
@@ -81,13 +83,13 @@ function EditBook() {
                 navigate('/books');
               });
             } else {
-              // Show error message
+              
               Swal.fire({
                 title: 'Error!',
                 text: error || 'Failed to update the book. Please try again.',
                 icon: 'error',
-                timer: 3000, // Closes automatically after 3 seconds
-                showConfirmButton: false, // Hides the "OK" button
+                timer: 3000,
+                showConfirmButton: false,
               });
             }
           }
@@ -95,6 +97,7 @@ function EditBook() {
 
     }
 
+    // Cancel button function
     const handleCancel = () => {
         Swal.fire({
             title: 'Are you sure?',

@@ -95,40 +95,13 @@ function Dashboard() {
             </div>
           </div>
 
+          {/* Recently Added Books */}
           <div>
             <h2 className='text-2xl font-bold font-semibol pt-4 pb-5'>Recently Added Books</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ">
               {books.slice(-4).reverse().map((book) => (
                 <BookCard key={book.id} book={book} />
               ))}
-            </div>
-          </div>
-
-          <div className="flex items-center justify-center h-48 mb-4 rounded-sm bg-gray-50">
-            <p className="text-2xl text-gray-400">
-
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="flex items-center justify-center rounded-sm bg-gray-50 h-28">
-              <p className="text-2xl text-gray-400">
-
-              </p>
-            </div>
-            <div className="flex items-center justify-center rounded-sm bg-gray-50 h-28">
-              <p className="text-2xl text-gray-400">
-
-              </p>
-            </div>
-            <div className="flex items-center justify-center rounded-sm bg-gray-50 h-28">
-              <p className="text-2xl text-gray-400">
-
-              </p>
-            </div>
-            <div className="flex items-center justify-center rounded-sm bg-gray-50 h-28">
-              <p className="text-2xl text-gray-400">
-
-              </p>
             </div>
           </div>
         </div>

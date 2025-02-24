@@ -13,6 +13,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
   const { deleteBook, loading, error } = useBooks();
   const navigate = useNavigate();
 
+  //delete book
   const handleDelete = async () => {
     Swal.fire({
       title: 'Are you sure?',
@@ -23,7 +24,6 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
       cancelButtonText: 'No, keep it',
     }).then(async (result) => {
       if (result.isConfirmed) {
-        // Call the onDelete callback with the book ID
         await deleteBook(book.id);
         if (!error && !loading) {
           Swal.fire({
@@ -54,6 +54,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
     });
   }
 
+  //edit book function
   const handleEdit = () => {
     Swal.fire({
       title: 'Are you sure?',
@@ -64,7 +65,6 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
       cancelButtonText: 'No, cancel',
     }).then((result) => {
       if (result.isConfirmed) {
-        // Navigate to the EditBook page with the book ID
         navigate(`/edit-book/${book.id}`);
       }
     });

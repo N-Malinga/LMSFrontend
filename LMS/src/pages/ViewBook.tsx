@@ -18,6 +18,7 @@ function ViewBook() {
     const [description, setDescription] = useState('');
     const [imgLink, setImgLink] = useState('');
 
+    // Fetch book details when render the component
     useEffect(() => {
         const fetchBook = async () => {
             if (id) {
@@ -34,6 +35,7 @@ function ViewBook() {
         fetchBook();
     }, []);
 
+    //handle edit function
     const handleEdit = () => {
         Swal.fire({
             title: 'Are you sure?',
@@ -44,7 +46,6 @@ function ViewBook() {
             cancelButtonText: 'No, cancel',
         }).then((result) => {
             if (result.isConfirmed) {
-                // Navigate to the EditBook page with the book ID
                 navigate(`/edit-book/${id}`);
             }
         });

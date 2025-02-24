@@ -4,11 +4,10 @@ import logo from '../../assets/LibroMate-logo.png';
 import { icons } from '../../constants/icons.ts';
 
 interface SidebarProps {
-  currentRoute: string; // Define the prop for the current route
+  currentRoute: string;
 }
 
 function Sidebar({ currentRoute }: SidebarProps) {
-  // Determine the active button based on the current route
   const getActiveButton = () => {
     if (currentRoute === '/') return 'dashboard';
     if (currentRoute === '/books') return 'books';
@@ -56,6 +55,7 @@ function Sidebar({ currentRoute }: SidebarProps) {
               <img src={logo} alt="" className="w-45" />
             </div>
 
+            {/* dashboard */}
             <li>
               <Link
                 to="/"
@@ -71,6 +71,8 @@ function Sidebar({ currentRoute }: SidebarProps) {
                 <span className={`ms-3 ${activeButton === 'dashboard' ? 'text-white' : ''}`}>Dashboard</span>
               </Link>
             </li>
+            
+            {/* Manage books */}
             <li>
               <Link
                 to="/books"
@@ -81,6 +83,8 @@ function Sidebar({ currentRoute }: SidebarProps) {
                 <span className={`ms-3 ${activeButton === 'books' ? 'text-white' : ''}`}>Manage Books</span>
               </Link>
             </li>
+
+            {/* Add a book */}
             <li>
               <Link
                 to="/add-book"
@@ -91,6 +95,8 @@ function Sidebar({ currentRoute }: SidebarProps) {
                 <span className={`ms-3 ${activeButton === 'add-book' ? 'text-white' : ''}`}>Add a book</span>
               </Link>
             </li>
+
+            {/* help */}
             <li>
               <div className="flex items-center p-2 rounded-lg hover:bg-gray-100">
                 {/* <Link

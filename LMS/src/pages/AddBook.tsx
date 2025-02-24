@@ -14,6 +14,7 @@ function Addbook() {
 
     const [errors, setErrors] = useState<{title?: string, author?: string, description?: string}> ({});
 
+    //form validation function
     const validateForm = () => {
         const newErrors: {title?: string, author?: string, description?: string} = {};
 
@@ -31,11 +32,12 @@ function Addbook() {
         return Object.keys(newErrors).length === 0;
     }
 
+    //form submit function
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         if (!validateForm()) {
-            return; // Stop if there are validation errors
+            return; 
           }
           
         const newBook = {
@@ -56,22 +58,24 @@ function Addbook() {
                 title: 'Success!',
                 text: 'The book has been saved successfully.',
                 icon: 'success',
-                timer: 3000, // Closes automatically after 2 seconds
-                showConfirmButton: false, // Hides the "OK" button
+                timer: 3000, 
+                showConfirmButton: false,
               });
         }else{
             Swal.fire({
                 title: 'Error!',
                 text: error || 'Failed to save the book. Please try again.',
                 icon: 'error',
-                timer: 3000, // Closes automatically after 3 seconds
-                showConfirmButton: false, // Hides the "OK" button
+                timer: 3000, 
+                showConfirmButton: false,
               });
         }
 
         
     }
 
+
+    // cancel button function
     const handleCancel = () => {
         Swal.fire({
           title: 'Are you sure?',
@@ -82,12 +86,10 @@ function Addbook() {
           cancelButtonText: 'No, keep it',
         }).then((result) => {
           if (result.isConfirmed) {
-            // Clear the form fields
             setTitle('');
             setAuthor('');
             setDescription('');
     
-            // Show confirmation message
             Swal.fire({
               title: 'Cleared!',
               text: 'All entered data has been cleared.',

@@ -7,11 +7,11 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
   const location = useLocation();
 
   return (
-    <div className="main-layout">
+    <div>
 
-      <div className="content-wrapper">
+      <div>
         <Sidebar currentRoute={location.pathname} />
-        <main className="main-content">{children}</main>
+        <main>{children}</main>
       </div>
 
     </div>
