@@ -1,5 +1,5 @@
 import React from 'react'
-import cover_Image from '../assets/cover_image.jpg'
+import cover_Image from '../assets/cover_image copy.jpg'
 import { sampleBooks } from '../constants/data'
 import BookCard from '../components/books/BookCard'
 import useBooks from '../hooks/useBooks'
@@ -36,7 +36,7 @@ function Dashboard() {
 
       <div className="p-4 sm:ml-64">
         <div className="p-4 border-gray-200 rounded-lg shadow-lg">
-          <div className="flex items-center justify-center h-48 my-4 rounded-lg bg-gray-50 overflow-hidden">
+          <div className="flex items-center justify-center h-100 my-4 rounded-lg bg-gray-50 overflow-hidden">
             <img
               src={cover_Image}
               className="object-cover"
@@ -48,7 +48,7 @@ function Dashboard() {
             {/* Book Count Card */}
             <div className="flex items-center justify-around rounded-lg p-6 shadow-md" style={{ backgroundColor: "var(--primary-color)" }}>
               <div className="flex items-center justify-center">
-                <img src={BookIcon} alt="Book Icon" className="w-16 h-16 mr-4" />
+                <img src={BookIcon} alt="Book Icon" className="w-30 h-30 mr-4" />
                 <div>
                   <p className="text-2xl text-white font-semibold">
                     Book Count
@@ -73,7 +73,7 @@ function Dashboard() {
             <div className="flex items-center justify-around rounded-lg p-6 shadow-md" style={{ backgroundColor: "var(--primary-color)" }}>
 
               <div className="flex items-center">
-                <img src={AuthorIcon} alt="Author Icon" className="w-16 h-16 mr-4" />
+                <img src={AuthorIcon} alt="Author Icon" className="w-30 h-30 mr-4" />
                 <div>
                   <p className="text-2xl text-white font-semibold">
                     Author Count

@@ -42,7 +42,7 @@ function Addbook() {
             title,
             author,
             description,
-            imgLink: "https://covers.openlibrary.org/b/id/10692642-L.jpg"
+            imgLink: "https://firebasestorage.googleapis.com/v0/b/ticketmatevehicle.appspot.com/o/bookImg.jpg?alt=media&token=b68c8665-3ad9-4970-8c46-5b850c98381d"
         };
 
         const createdBook = await createBook(newBook);

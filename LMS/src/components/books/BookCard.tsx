@@ -85,7 +85,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
       </div>
 
       <div className="p-4">
-        <h3 className="text-xl font-bold mb-2 text-gray-800" onClick={handleView}>{book.title}</h3>
+        <h3 className="text-xl font-bold mb-2 text-gray-800 truncate cursor-pointer" onClick={handleView}>{book.title}</h3>
         <p className="text-sm text-gray-600 mb-2">
           <strong>Author:</strong> {book.author}
         </p>
